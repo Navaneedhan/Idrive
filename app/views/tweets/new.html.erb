@@ -1,4 +1,4 @@
-<%= form_for @tweet, :url => {:action => "update", :id => @tweet} do |f| %>
+<%= form_for @tweet, :url => {:action => "create", :id => @tweet} do |f| %>
   <%= f.label :tweet %>
   <%= f.text_area :content, :class => "span12", :required => true %>
 

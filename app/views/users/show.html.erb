@@ -10,9 +10,11 @@
   <%= @user.email %>
 </p>
 
+<h3>Tweets (<%= @user.tweets.count %>)</h3>
+<%= link_to 'Add Tweets', new_user_tweet_path(@user), :class => "tweet_actions" %>
+
 <div class="span12">
   <% if @user.tweets.any? %>
-    <h3>Tweets (<%= @user.tweets.count %>)</h3>
     <ol class="tweets">
       <%= render @tweets %>
     </ol>

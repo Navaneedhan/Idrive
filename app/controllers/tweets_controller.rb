@@ -1,4 +1,22 @@
 class TweetsController < ApplicationController
+  def new
+    @tweet = Tweet.new
+  end
+
+  def create
+    @tweet = Tweet.new(user_tweet_params)
+    @tweet.user = User.find_by(id: params[:user_id])
+    respond_to do |format|
+      if @tweet.save
+        format.html { redirect_to @tweet.user, notice: 'Tweet was successfully added.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @tweet.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def update
     @tweet = Tweet.find_by(params[:id])
     respond_to do |format|
