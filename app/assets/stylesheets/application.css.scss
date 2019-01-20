@@ -12,3 +12,14 @@
  *= require_tree .
  */
 @import "bootstrap";
+
+.timestamp {
+  font-size: 85%;
+}
+.timestamp_edited {
+  font-size: 75%;
+}
+
+.tweet_actions {
+  text-decoration: underline;
+}

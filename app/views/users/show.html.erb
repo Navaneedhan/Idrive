@@ -10,5 +10,12 @@
   <%= @user.email %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="span12">
+  <% if @user.tweets.any? %>
+    <h3>Tweets (<%= @user.tweets.count %>)</h3>
+    <ol class="tweets">
+      <%= render @tweets %>
+    </ol>
+    <%= will_paginate @tweets %>
+  <% end %>
+</div>
