@@ -26,7 +26,6 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    puts user_params
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Welcome to the Sample App!"
