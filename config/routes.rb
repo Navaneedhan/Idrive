@@ -1,5 +1,7 @@
 IdriveApp::Application.routes.draw do
-  resources :users
+  resources :users do
+    resources :tweets
+  end
   root 'static_pages#home'
   resources :sessions, only: [:new, :create, :destroy]
 

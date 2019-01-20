@@ -1,0 +1,6 @@
+<%= form_for @tweet, :url => {:action => "update", :id => @tweet} do |f| %>
+  <%= f.label :tweet %>
+  <%= f.text_area :content %>
+
+  <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
+<% end %>

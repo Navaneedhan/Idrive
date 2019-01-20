@@ -1,0 +1,8 @@
+<li>
+  <span class="content"><%= tweet.content %> <em class="timestamp_edited"><%= (tweet.updated_at != tweet.created_at) ? "(edited)" : "" %></em></span> |
+  <em class="timestamp">
+    Posted <%= time_ago_in_words(tweet.created_at) %> ago.
+  </em> |
+  <%= link_to 'Edit', edit_user_tweet_path(@user, tweet), :class => "tweet_actions" %> |
+  <%= link_to 'Delete', user_tweet_path(@user, tweet), :method => :delete, data: {:confirm => "You sure?" } , :title => "Delete", :class => "tweet_actions" %>
+</li>
