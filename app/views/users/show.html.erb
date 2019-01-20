@@ -2,17 +2,12 @@
 
 <p>
   <strong>User:</strong>
-  <%= @user.user %>
+  <%= @user.name %>
 </p>
 
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
-</p>
-
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
