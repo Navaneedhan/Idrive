@@ -4,6 +4,7 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.8'
 gem 'nokogiri', '~> 1.6', '>= 1.6.8'
+gem 'rake', '< 11.0'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
